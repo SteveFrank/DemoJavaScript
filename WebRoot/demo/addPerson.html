@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>addPerson.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	
+		//open窗口
+		function choseDeptByOpen() {
+			window.open("listDept.html","","width=300px,height=400px");
+		}
+		
+		//用来接收open子窗口的值
+		function receiveValue(param) {
+			document.getElementById("dept").value = param;
+		}
+		
+		//showModalDialog窗口
+		function choseDeptByDialog() {
+			var v = window.showModalDialog("listDept.html","","dialogWidth:300px;dialogHeight:400px;");
+			receiveValue(v);
+		}
+		
+	</script>
+  </head>
+  
+  <body>
+    <form>
+    	<table>
+    		<tr>
+    			<td>姓名：</td>
+    			<td>
+    				<input type="text"/>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>年龄：</td>
+    			<td>
+    				<input type="text"/>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>地址：</td>
+    			<td>
+    				<input type="text"/>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>部门：</td>
+    			<td>
+    				<input type="text" id="dept"/>
+    				<input type="button" value="选择部门" onclick="choseDeptByDialog()"/>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2">
+    				<input type="button" value="确定"/>
+    				<input type="button" value="返回" onclick="javascript:history.go(-1)"/>
+    			</td>
+    		</tr>
+    	</table>
+    </form>
+  </body>
+</html>

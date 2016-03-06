@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>demo1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+  	<!-- Buttons 库的核心文件 -->
+  	<link rel="stylesheet" href="../css/bootstrap.css">
+
+  	<!-- 当需要使用带下拉菜单的按钮时才需要加载下面的 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
+  	<script type="text/javascript" src="../js/bootstrap.js"></script>
+
+  	<!-- 只有使用字体图标时才需要加载 Font-Awesome -->
+  	<link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  
+   	<style type="text/css">
+   		.selectfont{
+   			font-size:15px;
+   			font-family: 华文行楷;
+   			font-style: normal;
+   			font-variant: small-caps; 
+   		}
+   	</style>
+   	<script type="text/javascript">
+    	function dateShow(){
+    		var now = new Date();
+    		var hour = now.getHours();
+    		var minu = now.getMinutes();
+    		alert("您好！现在时间是"+hour+":"+minu+"\r"+"欢迎访问本公司网站");
+    	}
+    </script>
+
+  </head>
+
+  <body>
+  	<form action="#" name="form1" method="post" class="well form-search">
+  		<select class="selectfont">
+  			<option value="0">---请选择---</option>
+  			<option value="1">深圳</option>
+  		</select>
+  		<br><br><br><br>
+  		<input type="button" onclick="dateShow()" value="时间显示">
+  		<br><br><br><br>
+  		<h4>电话号码匹配</h4>
+  		<input type="text" name="tel" class="input-medium search-query">  
+  		<button type="submit" class="btn">检测</button>
+  	</form>
+  </body>
+</html>

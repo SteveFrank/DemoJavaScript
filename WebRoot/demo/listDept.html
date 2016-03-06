@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>listDept.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		//open窗口传值
+		function returnDeptByOpen() {
+			var dep = document.getElementsByName("dep");
+			for(var i=0;i<dep.length;i++) {
+				//判断哪一个部门被选中
+				if(dep[i].checked) {
+					//调用父页面的receiveValue函数将选中的部门传回去
+					window.opener.receiveValue(dep[i].value);
+					//关闭小窗口
+					window.close();
+				}
+			}
+		}
+		
+		//showModalDialog窗口传值
+		function returnDepByDialog() {
+			var dep = document.getElementsByName("dep");
+			for(var i=0;i<dep.length;i++) {
+				//判断哪一个部门被选中
+				if(dep[i].checked) {
+					//传值回父页面
+					window.returnValue = dep[i].value;
+					//关闭小窗口
+					window.close();
+				}
+			}
+		}
+	</script>
+  </head>
+  
+  <body>
+   	<form action="">
+   		<table border="1">
+   			<tr>
+   				<td>选择</td>
+   				<td>部门名称</td>
+   			</tr>
+   			<tr>
+   				<td>
+   					<input type="radio" name="dep" value="人事务"/>
+   				</td>
+   				<td>人事务</td>
+   			</tr>
+   			<tr>
+   				<td>
+   					<input type="radio" name="dep" value="财务部"/>
+   				</td>
+   				<td>财务部</td>
+   			</tr>
+   			<tr>
+   				<td>
+   					<input type="radio" name="dep" value="研发部"/>
+   				</td>
+   				<td>研发部</td>
+   			</tr>
+   			
+   			<tr>
+   				<td>
+   					<input type="radio" name="dep" value="市场部"/>
+   				</td>
+   				<td>市场部</td>
+   			</tr>
+   			<tr>
+   				<td>
+   					<input type="radio" name="dep" value="销售部"/>
+   				</td>
+   				<td>销售部</td>
+   			</tr>
+   			<tr>
+   				<td colspan="2">
+   					<input type="button" value="确定" onclick="returnDepByDialog()"/>
+   				</td>
+   			</tr>
+   		</table>
+   	</form>
+  </body>
+</html>
+
+	
